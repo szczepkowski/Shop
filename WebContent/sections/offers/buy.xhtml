@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core">
+         
+ <body>
+      <ui:composition template="/templates/masterLayout.xhtml">
+         <ui:param name="verified" value="#{user.verified}"/>
+         <ui:param name="notVerified" value="#{user.notVerified}"/>
+    
+    	<ui:define name="windowTitle">
+          Buy offer
+         </ui:define>
+         
+         <ui:define name="logout">
+         	<h:form>
+         	<h:commandLink rendered="#{user.verified}" action="#{user.logout}"  value="[ -- Wyloguj -- ]" />
+         	</h:form>
+         </ui:define>
+                           
+         <ui:define name="content">
+             <div id="tresc">								
+				<div id="wpis">			
+				<br />
+				<h:panelGrid rendered="#{user.notVerified}">
+					<p> Musisz się  <h:link value="zalogować" outcome="login"/>aby móc coś kupić </p>
+
+				</h:panelGrid>
+				<h:form rendered="#{user.verified}">
+				<h2>Transakcja zakupu</h2>
+						<h:dataTable value="#{offer.offerDetails}" var="offerDetails">
+						<h:column>		
+							Nazwa : #{offerDetails.name}
+							<p>#{offerDetails.startDateWithFormat} ---- <b>Autor</b> : <a href="#">#{offerDetails.seller.name}</a>
+
+							</p> 		<hr />
+							<p><i>Cena : #{offerDetails.priceCurrency}</i></p>
+						</h:column>
+							</h:dataTable>
+						&lt;&lt;&lt;&lt; ===== <h:commandButton rendered="#{!offer.ownOffer and offer.active}" value="Kup teraz" action="#{offer.buy}"/> ==== &gt;&gt;&gt;&gt;
+						
+						<br /><br />
+						<font color="red"><h:outputText rendered="#{offer.ownOffer}" value="Nie możesz dokonać zakupu swojej oferty"/>
+											<h:outputText rendered="#{!offer.active}" value="Produkt już został kupiony"/>
+								</font>
+
+
+					</h:form>
+				<br />
+				</div>	
+			<br /><br />
+				
+			</div>
+         </ui:define>
+      </ui:composition>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+         xmlns:f="http://java.sun.com/jsf/core">
+      <f:view>
+	      <f:metadata>
+	    	  <f:viewParam name="id" value="#{offer.offId}"/>
+	      </f:metadata>
+      </f:view>
+         
+ <body>
+      <ui:composition template="/templates/masterLayout.xhtml">
+         <ui:param name="verified" value="#{user.verified}"/>
+         <ui:param name="notVerified" value="#{user.notVerified}"/>
+    
+         
+    	<ui:define name="windowTitle">
+          offer Details
+         </ui:define>
+         
+         <ui:define name="logout">
+         	<h:form>
+         	<h:commandLink rendered="#{user.verified}" action="#{user.logout}"  value="[ -- Wyloguj -- ]" />
+         	</h:form>
+         </ui:define>
+                           
+         <ui:define name="content">
+             <div id="tresc">								
+				<div id="wpis">				
+					<br />			
+					<h:form>
+						<h:dataTable value="#{offer.offerDetails}" var="offerDetails">
+						<h:column>		
+							<p> <i>Kategoria :  #{offerDetails.category.name}</i></p>
+							<h2>#{offerDetails.name}</h2>
+							<p>#{offerDetails.startDateWithFormat} ---- <b>Autor</b> : <a href="#">#{offerDetails.seller.name}</a>
+
+							<span><h:commandButton  value="Kup teraz" action="#{offer.preBuy}">
+								<f:param name="userS" value="#{user.name}"/>
+							</h:commandButton>
+							</span>
+
+							</p> 		<hr />
+							<p><i>Cena : #{offerDetails.priceCurrency}</i></p>
+							<p>#{offerDetails.specification}</p>
+						</h:column>
+						</h:dataTable>
+					</h:form>
+					<hr />
+
+					<br />		
+				</div>	
+			<br /><br />
+				
+			</div>
+         </ui:define>
+      </ui:composition>
+
+</body>
+</html>

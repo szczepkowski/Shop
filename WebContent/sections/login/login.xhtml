@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+     <body> 
+     
+       <ui:composition template="/templates/masterLayout.xhtml">
+                <ui:param name="verified" value="#{user.verified}"/>
+         <ui:param name="notVerified" value="#{user.notVerified}"/>
+         <ui:define name="windowTitle">
+          Shop-Gore
+         </ui:define>
+
+    <ui:define name="content">
+    <div id="tresc">								
+	<div id="wpis">				
+	<br />					
+	<h2>Logowanie</h2>
+		<hr />
+	
+     <h:form prependId="false">
+         <h3>Proszę wpisać nazwę i hasło użytkownika.</h3>
+         <table>
+            <tr>
+               <td>Nazwa:</td>
+               <td><h:inputText value="#{user.name}" id="name"/></td>
+            </tr>
+            <tr>
+               <td>Hasło:</td>
+               <td><h:inputSecret value="#{user.password}" id="password"/></td>
+            </tr>
+         </table>
+         <p><h:commandButton value="Login" action="#{user.verifyUser}">
+            <f:ajax execute="name password" render="out"/>
+         </h:commandButton></p>
+         <h:link value="Zarejestruj" outcome="register"/>
+         <h3><h:outputText id="out" value="#{user.verify}"/></h3>
+      </h:form>
+      
+	<br />		
+	</div>	
+	<br /><br />
+				
+	</div>
+    </ui:define>
+   </ui:composition>
+ 
+   </body>
+</html>

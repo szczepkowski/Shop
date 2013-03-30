@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+        <head><title>IGNORED</title></head>
+        
+ <body>
+      <ui:composition template="/templates/masterLayout.xhtml">
+         <ui:param name="verified" value="#{user.verified}"/>
+         <ui:param name="notVerified" value="#{user.notVerified}"/>
+         <ui:param name="logout" value="#{user.logout}"/>
+         
+         <ui:define name="windowTitle">
+          Shop-Gore
+         </ui:define>
+         
+         
+                
+         <ui:define name="content">
+             <div id="tresc">								
+				<div id="wpis">				
+					<br />					
+					<h2>Opis Projektu</h2>
+					<h:inputHidden value="{#logout}"/>
+					<p>Zostałeś wylogowany
+					</p><hr />
+					<p><a href="/">Read more | Comments</a>(28)</p>	
+					<br />		
+				</div>	
+			<br /><br />
+				
+			</div>
+         </ui:define>
+      </ui:composition>
+
+</body>
+</html>

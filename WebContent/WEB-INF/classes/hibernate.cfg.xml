@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC 
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+    
+        <!-- Settings for a local HSQL (testing) database. -->
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/shop.db?characterEncoding=UTF-8</property>
+  <property name="hibernate.connection.username">gore</property>
+  <property name="hibernate.connection.password">marta1</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+
+        <!-- Use the C3P0 connection pool. -->
+        <property name="c3p0.min_size">3</property>
+        <property name="c3p0.max_size">5</property>
+        <property name="c3p0.timeout">1800</property>
+    
+        <!-- Disable second-level cache. -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <property name="cache.use_query_cache">false</property>
+        <property name="cache.use_minimal_puts">false</property>
+        <property name="max_fetch_depth">3</property>
+    
+        <!-- Print SQL to stdout. -->
+        <property name="show_sql">true</property>
+    
+        <!-- Drop and then re-create schema on SessionFactory build, for testing. -->
+        <property name="hbm2ddl.auto">update</property>
+    
+        <!-- Bind the getCurrentSession() method to the thread. -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Hibernate  mapping class -->
+		<mapping class="pl.igore.shop.POJO.User"/>
+		<mapping class="pl.igore.shop.POJO.Admin"/>
+		<mapping class="pl.igore.shop.POJO.Category"/>
+		<mapping class="pl.igore.shop.POJO.Offer"/>
+		<mapping class="pl.igore.shop.POJO.Transaction"/>
+    	
+        <!-- Hibernate Annotations (and package-info.java) -->
+
+		
+    </session-factory>
+
+</hibernate-configuration>

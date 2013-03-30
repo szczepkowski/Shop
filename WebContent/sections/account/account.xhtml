@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core">
+         
+ <body>
+      <ui:composition template="/templates/masterLayout.xhtml">
+         <ui:param name="verified" value="#{user.verified}"/>
+         <ui:param name="notVerified" value="#{user.notVerified}"/>
+    
+    	<ui:define name="windowTitle">
+          Sell details
+         </ui:define>
+         
+         <ui:define name="logout">
+         	<h:form>
+         	<h:commandLink rendered="#{user.verified}" action="#{user.logout}"  value="[ -- Wyloguj -- ]" />
+         	</h:form>
+         </ui:define>
+                           
+         <ui:define name="content">
+             <div id="tresc">								
+				<div id="wpis">			
+		<h:panelGrid rendered="#{user.notVerified}">
+			<p>Musisz się <h:link value="zalogować" outcome="login" /> aby wejść na swoje konto.</p>
+		</h:panelGrid>	
+		
+		<h:form rendered="#{user.verified}">
+         <h3>Twoje konto</h3>
+              <hr />
+         <table>
+            <tr>
+               <td>Dane użytkownika : <b><font color="green"><h:outputText value="#{user.name}"/></font></b></td>
+            </tr>
+            <tr>
+               <td><br/><h:link value="Kupiłeś" outcome="bought"></h:link></td>
+            </tr>
+              <tr>
+               <td><h:link value="Sprzedajesz" outcome="sold"></h:link></td>
+            </tr>           
+            <tr>
+               <td><h:link value="Zapłać" outcome="payList"></h:link></td>
+            </tr>                   
+        </table>
+       <hr />
+       <h:link value="powrot" outcome="index"/>
+       <br />
+       <br />
+
+      </h:form>	
+				</div>	
+			<br /><br />
+				
+			</div>
+         </ui:define>
+      </ui:composition>
+
+</body>
+</html>

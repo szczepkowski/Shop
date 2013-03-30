@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   
+   <h:head>
+      <title>
+      <ui:insert name="windowTitle"> shop-gore</ui:insert>
+      </title>
+      <h:outputStylesheet library="css" name="style.css"/>
+   </h:head>
+   
+   <h:body>   
+     <div id="wrapper">
+ 
+	  <div id="naglowek">
+   		 <h:graphicImage name="logo.jpg" library="images"/>
+   </div>
+
+	<div id="tabs">
+    <ul>
+		<li><h:link outcome="index" value="Strona Główna"  /></li>
+		<li><h:link outcome="index" value="Moje Konto"  /></li>
+		<li><h:link outcome="index" value="Sprzedaj"  /></li>
+		<li><h:link outcome="index" value="Forum"  /></li>
+        <li><h:link outcome="index" value="Pomoc"  /></li>
+		<li><h:link outcome="index" value="Kontakt"  /></li>
+         	<ui:insert name="login">
+         	<h:inputHidden value="#{user}"/>
+         	      	 	<br />
+      		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      		<h:link rendered="#{notVerified}" outcome="login" value="[ -- Zaloguj się -- ]"  />
+      		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        <h:link rendered="#{notVerified}" outcome="register" value="[ --- Rejestracja --- ]"  />
+	        
+	        </ui:insert>
+	        
+	        <ui:insert name="logout">
+
+	    	   </ui:insert>
+    	
+    </ul>
+    </div>
+    
+	<ui:insert name="content">
+	
+	</ui:insert>
+  
+      	<ui:insert name="footer">
+      	<div id="stopka">
+			<p>Copyright <a href="http://shop-gore.rhcloud.com"> shop-gore </a> Design by <b>Gore</b></p> 
+			 	</div>
+			<p><font size="-2" color="silver">Tagi :  Java from Beginning
+			</font></p>
+			
+      	</ui:insert>
+  
+      	
+      </div>
+      <ui:debug/>
+   </h:body>
+</html>

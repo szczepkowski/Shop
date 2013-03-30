@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+      http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+   version="2.0">
+		<application>
+			<locale-config>
+				<default-locale>pl</default-locale>
+			</locale-config>
+			<resource-bundle>
+				<base-name>pl.igore.shop.messages</base-name>
+				<var>msgs</var>
+			</resource-bundle>		
+		</application>
+		
+		<navigation-rule>	
+			<navigation-case>
+				<from-outcome>index</from-outcome>
+				<to-view-id>/index.xhtml</to-view-id>
+				<redirect/>
+			</navigation-case>	
+		</navigation-rule>
+		
+		<navigation-rule>	
+				<navigation-case>
+					<from-outcome>login</from-outcome>
+					<to-view-id>/sections/login/login.xhtml</to-view-id>
+				</navigation-case>	
+			</navigation-rule>
+			
+		  <navigation-rule>	
+				<navigation-case>
+					<from-outcome>register</from-outcome>
+					<to-view-id>/sections/login/register.xhtml</to-view-id>
+					<redirect/>
+				</navigation-case>	
+			</navigation-rule>
+		
+		
+			<navigation-rule>	
+				<navigation-case>
+					<from-outcome>registered</from-outcome>
+					<to-view-id>/sections/login/registered.xhtml</to-view-id>
+				</navigation-case>	
+			</navigation-rule>
+			
+			<navigation-rule>	
+				<navigation-case>
+					<from-outcome>logout</from-outcome>
+					<to-view-id>/sections/login/logout.xhtml</to-view-id>
+				</navigation-case>	
+			</navigation-rule>
+					
+			<navigation-rule>	
+				<navigation-case>
+					<from-outcome>admin</from-outcome>
+					<to-view-id>/sections/admin/adminLogin.xhtml</to-view-id>
+				</navigation-case>	
+			</navigation-rule>
+			
+			<navigation-rule>	
+				<navigation-case>
+					<from-outcome>adminAccount</from-outcome>
+					<to-view-id>/sections/admin/adminAccount.xhtml</to-view-id>
+					<redirect/>
+				</navigation-case>	
+			</navigation-rule>
+			
+			<navigation-rule>	
+				<navigation-case>
+					<from-outcome>addAdmin</from-outcome>
+					<to-view-id>/sections/admin/addAdmin.xhtml</to-view-id>
+				</navigation-case>	
+			</navigation-rule>
+			
+			<navigation-rule>
+						<navigation-case>	
+							<from-outcome>category</from-outcome>
+							<to-view-id>/sections/offers/offersByCategory.xhtml</to-view-id>
+						<redirect/>
+						</navigation-case>	
+			</navigation-rule>
+			
+				<navigation-rule>
+						<navigation-case>	
+							<from-outcome>offer</from-outcome>
+							<to-view-id>/sections/offers/offerDetails.xhtml</to-view-id>
+							<redirect/>
+						</navigation-case>	
+			</navigation-rule>
+			
+			<navigation-rule>
+						<navigation-case>	
+							<from-outcome>sell</from-outcome>
+							<to-view-id>/sections/sell/sellDetails.xhtml</to-view-id>
+							<redirect/>
+						</navigation-case>	
+			</navigation-rule>
+			
+				<navigation-rule>
+						<navigation-case>	
+							<from-outcome>addOffer</from-outcome>
+							<to-view-id>/sections/sell/addOffer.xhtml</to-view-id>
+						</navigation-case>	
+			</navigation-rule>
+			
+				<navigation-rule>
+						<navigation-case>	
+							<from-outcome>offerSuccess</from-outcome>
+							<to-view-id>/sections/sell/offerSuccess.xhtml</to-view-id>
+						</navigation-case>	
+			</navigation-rule>
+			
+			<navigation-rule>
+						<navigation-case>	
+							<from-outcome>account</from-outcome>
+							<to-view-id>/sections/account/account.xhtml</to-view-id>
+						</navigation-case>	
+			</navigation-rule>
+			
+			<navigation-rule>
+						<navigation-case>	
+							<from-outcome>bought</from-outcome>
+							<to-view-id>/sections/account/bought.xhtml</to-view-id>
+						</navigation-case>	
+			</navigation-rule>
+			
+			<navigation-rule>
+						<navigation-case>	
+							<from-outcome>sold</from-outcome>
+							<to-view-id>/sections/account/sold.xhtml</to-view-id>
+						</navigation-case>	
+			</navigation-rule>
+		
+			
+			<navigation-rule>
+						<navigation-case>	
+							<from-outcome>help</from-outcome>
+							<to-view-id>/sections/other/help.xhtml</to-view-id>
+						</navigation-case>	
+			</navigation-rule>
+			
+				
+			<navigation-rule>
+						<navigation-case>	
+							<from-outcome>contact</from-outcome>
+							<to-view-id>/sections/other/contact.xhtml</to-view-id>
+						</navigation-case>	
+			</navigation-rule>
+			
+				
+			<navigation-rule>
+						<navigation-case>	
+							<from-outcome>aboutUs</from-outcome>
+							<to-view-id>/sections/other/aboutUs.xhtml</to-view-id>
+						</navigation-case>	
+			</navigation-rule>
+			
+			<navigation-rule>
+						<navigation-case>	
+							<from-outcome>buy</from-outcome>
+							<to-view-id>/sections/offers/buy.xhtml</to-view-id>
+						</navigation-case>	
+			</navigation-rule>
+			
+			<navigation-rule>
+						<navigation-case>	
+							<from-outcome>payList</from-outcome>
+							<to-view-id>/sections/account/payList.xhtml</to-view-id>
+						</navigation-case>	
+			</navigation-rule>
+			
+				<navigation-rule>
+						<navigation-case>	
+							<from-outcome>pay</from-outcome>
+							<to-view-id>/sections/account/pay.xhtml</to-view-id>
+						</navigation-case>	
+			</navigation-rule>
+			
+</faces-config>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core">
+         
+ <body>
+      <ui:composition template="/templates/masterLayout.xhtml">
+         <ui:param name="verified" value="#{user.verified}"/>
+         <ui:param name="notVerified" value="#{user.notVerified}"/>
+    
+    	<ui:define name="windowTitle">
+          Sell details
+         </ui:define>
+         
+         <ui:define name="logout">
+         	<h:form>
+         	<h:commandLink rendered="#{user.verified}" action="#{user.logout}"  value="[ -- Wyloguj -- ]" />
+         	</h:form>
+         </ui:define>
+                           
+         <ui:define name="content">
+             <div id="tresc">								
+				<div id="wpis">			
+		<h:panelGrid rendered="#{user.notVerified}">
+			<p>Musisz się <h:link value="zalogować" outcome="login" /> aby dodawać oferty.</p>
+		</h:panelGrid>	
+		
+		<h:form rendered="#{user.verified}">
+         <h3>Wszystko się zgadza ?</h3>
+         <table>
+            <tr>
+               <td>Tytuł oferty:</td>
+               <td><h:outputText value="#{sell.name}"/></td>
+            </tr>
+            <tr>
+               <td>Kategoria :</td>
+               <td><h:outputText value="#{sell.category}"/></td>
+            </tr>
+            <tr>
+               <td>Cena : </td>
+               <td><h:outputText value="#{sell.price}"/></td>
+            </tr>
+             <tr>
+               <td>Data rozpoczęcia : </td>
+               <td><h:outputText value="#{sell.startDate}"/></td>
+            </tr>
+            <tr>
+               <td>Czas rozpoczęcia : </td>
+               <td> Godzina :  <h:outputText value="#{sell.startDateHour}"/>
+               Minuta :  <h:outputText value="#{sell.startDateMin}"/> </td>
+            </tr>
+ 			<tr>
+ 			<td>Czas trwania : </td>
+ 			<td> <h:outputText value="#{sell.days}"/> </td>
+ 			</tr>
+ 
+           <tr>
+               <td>Opis:</td>
+               <td><h:outputText value="#{sell.specification}"/></td>
+            </tr>
+         </table>
+         <p>
+         <h:commandButton  value="Dodaj Oferte" action="#{sell.createOffer}">
+        	 <f:param name="userS" value="#{user.name}"/>
+         </h:commandButton>
+         
+         </p>
+
+      </h:form>	
+				</div>	
+			<br /><br />
+				
+			</div>
+         </ui:define>
+      </ui:composition>
+
+</body>
+</html>

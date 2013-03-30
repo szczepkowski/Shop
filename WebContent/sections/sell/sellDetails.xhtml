@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:f="http://java.sun.com/jsf/core">
+         
+ <body>
+      <ui:composition template="/templates/masterLayout.xhtml">
+         <ui:param name="verified" value="#{user.verified}"/>
+         <ui:param name="notVerified" value="#{user.notVerified}"/>
+    
+         
+    	<ui:define name="windowTitle">
+          Sell details
+         </ui:define>
+         
+         <ui:define name="logout">
+         	<h:form>
+         	<h:commandLink rendered="#{user.verified}" action="#{user.logout}"  value="[ -- Wyloguj -- ]" />
+         	</h:form>
+         </ui:define>
+                           
+         <ui:define name="content">
+             <div id="tresc">								
+				<div id="wpis">			
+		<h:panelGrid rendered="#{user.notVerified}">
+			<p>Musisz się <h:link value="zalogować" outcome="login" /> aby dodawać oferty.</p>
+		</h:panelGrid>	
+		
+		<h:form rendered="#{user.verified}">
+         <h3>Proszę wpisać detale oferty</h3>
+         <table>
+            <tr>
+               <td>Tytuł oferty:</td>
+               <td><h:inputText size ="60" value="#{sell.name}"/></td>
+            </tr>
+            <tr>
+               <td>Kategoria :</td>
+               <td>
+               <h:selectOneMenu value="#{sell.category}">
+              	 <f:selectItems  value="#{sell.catNamesList}"/>
+               </h:selectOneMenu>
+               	</td>
+            </tr>
+            <tr>
+               <td>Cena : </td>
+               <td><h:inputText value="#{sell.price}"/></td>
+            </tr>
+             <tr>
+               <td>Data rozpoczęcia : </td>
+               <td><h:inputText value="#{sell.startDate}"/></td>
+            </tr>
+            <tr>
+               <td>Czas rozpoczęcia : </td>
+              <td> Godzina :  <h:selectOneMenu value="#{sell.startDateHour}">
+              	 <f:selectItems  value="#{sell.hour}"/>
+               </h:selectOneMenu> 
+               Minuta : 
+              <h:selectOneMenu value="#{sell.startDateMin}">
+              	 <f:selectItems  value="#{sell.minute}"/>
+               </h:selectOneMenu> </td>
+            </tr>
+ 			<tr>
+ 			<td>Czas trwania : </td>
+ 			<td>     <h:selectOneMenu value="#{sell.days}">
+              	 <f:selectItems  value="#{sell.daysList}"/>
+               </h:selectOneMenu> </td> 
+ 			</tr>
+ 
+           <tr>
+               <td>Opis:</td>
+               <td><h:inputTextarea cols="60" rows="20" value="#{sell.specification}"/></td>
+            </tr>
+         </table>
+         <p>
+         <h:commandButton  value="Dodaj Oferte" action="#{sell.addOffer}">
+        	 <f:param name="userS" value="#{user.name}"/>
+         </h:commandButton>
+         
+         </p>
+
+      </h:form>	
+				</div>	
+			<br /><br />
+				
+			</div>
+         </ui:define>
+      </ui:composition>
+
+</body>
+</html>

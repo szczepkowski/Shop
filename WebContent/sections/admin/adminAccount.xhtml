@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+     <body> 
+     
+       <ui:composition template="/templates/adminLayout.xhtml">
+         <ui:param name="verified" value="#{admin.verified}"/>
+         <ui:param name="notVerified" value="#{admin.notVerified}"/>
+         
+         <ui:define name="windowTitle">
+          Panel Admina
+         </ui:define>
+         
+        <ui:define name="logout">
+         	<h:form>
+         	<h:commandLink rendered="#{admin.verified}" action="#{admin.logout}"  value="[ -- Wyloguj -- ]" />
+         	</h:form>
+         </ui:define>
+
+    <ui:define name="content">
+    <div id="tresc">								
+	<div id="wpis">				
+	<br />					
+	<h2>Panel Admina</h2>
+	<p>12 października 2012 11:52:25<span> Autor : <a href="#">gore</a></span></p> 		<hr />
+	
+ 
+         <h3>Co chcesz zrobić ?</h3>
+             
+         <p><h:link value="add Admin" outcome="addAdmin"/></p>
+         
+         <h:form >
+         
+         <p><h:commandButton value="add initial categories" action="#{admin.initCategory}"/></p>
+         
+         <p><h:commandButton value="add initial users" action="#{admin.initUsers}"/></p>
+         
+          <p><h:commandButton value="add 100 random offers" action="#{admin.add100RandomOffers}"/></p>
+          
+          <p><h:commandButton value="show Cat in console" action="#{admin.showCat}"/></p>
+            
+      </h:form>
+      
+	<br />		
+	</div>	
+	<br /><br />
+				
+	</div>
+    </ui:define>
+   </ui:composition>
+ 
+   </body>
+</html>

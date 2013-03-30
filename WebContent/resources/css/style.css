@@ -1,0 +1,122 @@
+/* CSS Document */
+
+html, body {
+
+	color: #000;
+	margin: 0;
+	padding: 0;
+	background:url(images/back.jpg);
+}
+
+#wrapper {
+	width: 1000px;
+	padding:0px 50px 25px 50px;
+	margin:0 auto;
+        margin-bottom:25px;
+	background-color: white;
+	-webkit-border-radius: 20px; /* Safari, Chrome */
+ 	-khtml-border-radius: 20px;    /* Konqueror */
+	-moz-border-radius: 20px; /* Firefox */
+ 	 border-radius: 20px;	
+}
+
+#naglowek{
+	 margin-top:10px;
+	padding-top:10px;
+	padding-left:115px;
+	padding-bottom:15px;
+	-webkit-border-radius: 20px; /* Safari, Chrome */
+ 	-khtml-border-radius: 20px;    /* Konqueror */
+	-moz-border-radius: 20px; /* Firefox */
+ 	 border-radius: 20px;	
+	 filter: alpha(Opacity=50);
+}
+#tabs {
+      margin-top:10px;
+      background:url(images/topmenu.jpg);
+	-webkit-border-radius: 5px; /* Safari, Chrome */
+ 	-khtml-border-radius: 5px;    /* Konqueror */
+	-moz-border-radius: 5px; /* Firefox */
+ 	 border-radius: 5px;	
+      float:left;
+      width:100%;
+      height:68px;
+      font-size:93%;
+      line-height:normal;
+      border-bottom:1px solid #666;
+      margin-bottom:25px;
+      color:black
+      
+      }
+  #tabs ul {
+	  margin:0;
+	  padding: 2px 10px 0px 185px;
+	  list-style:none;
+      }
+    #tabs li {
+      display:inline;
+      margin:0;
+      }
+    #tabs a {
+      float:left;
+      margin:0;
+      padding:0 0 0 10px;
+      text-decoration:none;
+      font-weight:bold;
+      color:white;
+      }
+      
+      #tabs a:hover
+		{ 
+	 color:purple;
+	 background-color:white;
+	}
+	
+    #tabs a span {
+      float:left;
+      display:block;
+      padding:5px 15px 4px 6px;
+      }
+
+#sidebar {
+	margin-top:0px;
+	margin-bottom:25px;
+	width: 190px;
+	float: left;
+	overflow: hidden;
+	background-color: #ccc;
+	height:930px;
+	padding:10px;
+	background:url(images/sidebar4.jpg);
+	text-align:center;
+	
+}
+
+#tresc{
+
+padding-top:120px;
+margin-left:225px;
+padding-left:15px;
+}
+
+#comment{
+padding-left:15px;
+background:#f4fdff;
+}
+
+#wpis{
+background:#dbdfe1;
+ -webkit-border-radius: 20px; /* Safari, Chrome */
+ -khtml-border-radius: 20px;    /* Konqueror */
+ -moz-border-radius: 20px; /* Firefox */
+  border-radius: 20px;
+ padding-right:50px;
+padding-left:25px;
+}
+
+#stopka {
+	width: 100%;
+	background-color:#f1f5f4;
+	text-align:center;
+	clear: both;
+}

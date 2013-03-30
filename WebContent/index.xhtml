@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+ 	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+         
+ <body>
+      <ui:composition template="/templates/masterLayout.xhtml">
+         <ui:param name="verified" value="#{user.verified}"/>
+         <ui:param name="notVerified" value="#{user.notVerified}"/>
+         <ui:param name="offer" value="#{offer}"/>
+         
+         <ui:define name="windowTitle">
+          Shop-Gore
+         </ui:define>
+         
+         <ui:define name="logout">
+         	<h:form>
+         	<h:commandLink rendered="#{user.verified}" action="#{user.logout}"  value="[ -- Wyloguj -- ]" />
+         	</h:form>
+         </ui:define>
+         
+
+                       
+         <ui:define name="content">
+             <div id="tresc">								
+				<div id="wpis">				
+					<br />					
+					<h2>Opis Projektu</h2>
+					<p>12 października 2012 11:52:25<span> Autor : <a href="#">gore</a></span></p> 		<hr />
+					<p> Cały projekt jest realizowany celem nauki frameworków : JSF i HiB. 
+					Wcześniej opracowywałem projekt Swing + Hibernate i już mogę zauważyć że JSF i prezentacja
+					danych za pomocą JSF daje o wiele większe możliwości. Ponadto wcześniej tworzyłem aplikacje internetowe
+					w Pythonie, a mianowicie we Frameworku Django. Tworzenie oprogramowania w Javie i jej frameworkach jest
+					znacznie łatwiejsze. Ogrom wsparcia techicznego, książki które dokładnie opisują główne zastosotwanie 
+					frameworków, rozbudowane tutoriale i szerokie grupy wsparcia sprawiają, że to naprawe przyjemne.</p>
+					<p>
+					Jeśli chodzi o ten projekt to w planie jest zrobienie czegoś na kształt allegro .. na zasadzie nauki. Główną
+					funkcjonalnością jest sklep czyli możliwość prezentowania ofert. Oferty dodawane do bazy danych za pomocą formularzy
+					będą wyświetlane na www za pomocą JSF. To jak poręcznie zaprogramuje www aby korzystanie z tego portalu było przyjemne
+					i aby spełniało swoją funkcję zależy od moich zdolności w JSF. Moim zdaniem to swietne ćwiczenie i przyda się każdemu
+					kto chcę poznać tajniki projektowania stron www za pomocą JSF.</p>
+					<p>Poza główną użytecznością w miarę możliwośći i chęci myślałem też o dodatkowych możliwościach jak Mailing, Captcha,
+					Automat do dodawania losowych ofert ( losowe zdjecie, losowe słowa w opisie) i takich podobnych, ale nie wiem czy starczy czasu.
+					Myślę, że roboty jest tyle żeby można się było tym kimś podzielić kto również chce się czegoś nauczyć także zapraszam do wspólpracy ;]
+					</p>
+					<hr />
+					<p>&lt;&lt;&lt;&lt; ===== <a href="https://github.com/g0re1/shop">GitHub</a> ==== &gt;&gt;&gt;&gt;</p>
+					<br />		
+				</div>	
+			<br /><br />
+				
+			</div>
+         </ui:define>
+      </ui:composition>
+
+</body>
+</html>
