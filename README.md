@@ -13,7 +13,7 @@ Klikając na ofertę można ją kupić, ale tylko zalogowani użytkownicy mogą 
 
 Rejestrujemy nowego użytkownika pod linkiem rejestracja. Mając konto możeny się zalogować.
 
-Zalogowany użytkownik może dokonać zakupu klikając kup teraz na linku z ofertą. Kupiona oferta przestaje być aktywna i przestaje być widoczna w kategoriach a jest widoczna w panelu użytkownika jednak już bez możliwości zakupu.
+Zalogowany użytkownik może dokonać zakupu klikając kup teraz na linku z ofertą. Kupiona oferta przestaje być aktywna i przestaje być widoczna w kategoriach, a jest widoczna w panelu użytkownika jednak już bez możliwości zakupu.
 
 Kupując dany produkt tworzona jest nowa Transakcja w bazie danych. Transakcje możemy zrealizować płacąc za produkt w końcie użytkownika.
 
