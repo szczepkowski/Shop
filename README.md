@@ -15,5 +15,5 @@ Rejestrujemy nowego użytkownika pod linkiem rejestracja. Mając konto możeny s
 
 Zalogowany użytkownik może dokonać zakupu klikając kup teraz na linku z ofertą. Kupiona oferta przestaje być aktywna i przestaje być widoczna w kategoriach, a jest widoczna w panelu użytkownika jednak już bez możliwości zakupu.
 
-Kupując dany produkt tworzona jest nowa Transakcja w bazie danych. Transakcje możemy zrealizować płacąc za produkt w końcie użytkownika.
+Kupując dany produkt tworzona jest nowa Transakcja w bazie danych. Transakcje możemy zrealizować płacąc za produkt w koncie użytkownika.
 
